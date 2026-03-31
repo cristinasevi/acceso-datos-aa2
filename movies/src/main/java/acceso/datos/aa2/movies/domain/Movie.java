@@ -35,13 +35,16 @@ public class Movie {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
+    @Column(nullable = false)
+    private boolean active = true;
+
     @Column
     @Min(value = 1, message = "Duration must be at least 1 minute")
     @Max(value = 600, message = "Duration cannot exceed 600 minutes")
     private Integer duration;
 
     @Column(length = 50)
-    @Pattern(regexp = "^(Action|Drama|Comedy|Horror|Science Fiction|Romance|Thriller|Animation|Documentary|Adventure)$",
+    @Pattern(regexp = "^(ACTION|DRAMA|COMEDY|HORROR|SCIENCE_FICTION|ROMANCE|THRILLER|ANIMATION|DOCUMENTARY|ADVENTURE)$",
             message = "Invalid genre")
     private String genre;
 

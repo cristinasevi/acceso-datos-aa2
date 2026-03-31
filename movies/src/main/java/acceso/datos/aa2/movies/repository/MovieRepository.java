@@ -26,6 +26,8 @@ public interface MovieRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findByStudioId(Long studioId);
 
+    List<Movie> findByActiveTrue();
+
     // Combinaciones con genre
     List<Movie> findByGenreAndAverageRatingGreaterThanEqual(String genre, Float minRating);
 

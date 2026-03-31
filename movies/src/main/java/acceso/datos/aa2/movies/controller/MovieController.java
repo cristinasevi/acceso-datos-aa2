@@ -3,9 +3,7 @@ package acceso.datos.aa2.movies.controller;
 import acceso.datos.aa2.movies.domain.Director;
 import acceso.datos.aa2.movies.domain.Movie;
 import acceso.datos.aa2.movies.domain.Studio;
-import acceso.datos.aa2.movies.dto.MovieCreateRequest;
-import acceso.datos.aa2.movies.dto.MovieOutDto;
-import acceso.datos.aa2.movies.dto.MovieUpdateRequest;
+import acceso.datos.aa2.movies.dto.*;
 import acceso.datos.aa2.movies.exception.DirectorNotFoundException;
 import acceso.datos.aa2.movies.exception.ErrorResponse;
 import acceso.datos.aa2.movies.exception.MovieNotFoundException;
@@ -28,6 +26,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@RequestMapping("/api")
 public class MovieController {
 
     @Autowired
@@ -39,7 +38,7 @@ public class MovieController {
     @Autowired
     private DirectorRepository directorRepository;
 
-    @GetMapping("/movies")
+    @GetMapping("/v1/movies")
     public ResponseEntity<List<MovieOutDto>> getAll(
             @RequestParam(value = "genre", required = false) String genre,
             @RequestParam(value = "releaseDateFrom", required = false)
@@ -51,13 +50,19 @@ public class MovieController {
         return ResponseEntity.ok(movies);
     }
 
-    @GetMapping("/movies/{id}")
+    @GetMapping("/v1/movies/{id}")
     public ResponseEntity<MovieOutDto> get(@PathVariable long id) throws MovieNotFoundException {
         MovieOutDto movieOutDto = movieService.findById(id);
         return ResponseEntity.ok(movieOutDto);
     }
 
-    @PostMapping("/movies")
+    @GetMapping("/v2/movies/{id}")
+    public ResponseEntity<MovieOutDtoV2> getV2(@PathVariable long id) throws MovieNotFoundException {
+        return ResponseEntity.ok(movieService.findByIdV2(id));
+    }
+
+    @PostMapping("/v1/movies")
+    @Deprecated
     public ResponseEntity<Movie> addMovie(@Valid @RequestBody MovieCreateRequest movieRequest) {
         Movie movie = new Movie();
         movie.setTitle(movieRequest.getTitle());
@@ -92,7 +97,38 @@ public class MovieController {
         return new ResponseEntity<>(newMovie, HttpStatus.CREATED);
     }
 
-    @PutMapping("/movies/{id}")
+    @PostMapping("/v2/movies")
+    public ResponseEntity<Movie> addMovieV2(@Valid @RequestBody MovieCreateRequestV2 movieRequest) {
+        Movie movie = new Movie();
+        movie.setTitle(movieRequest.getTitle());
+        movie.setSynopsis(movieRequest.getSynopsis());
+        movie.setReleaseDate(movieRequest.getReleaseDate());
+        movie.setDuration(movieRequest.getDuration());
+        movie.setGenre(movieRequest.getGenre());
+        movie.setImageUrl(movieRequest.getImageUrl());
+        movie.setAverageRating(movieRequest.getAverageRating());
+
+        if (movieRequest.getStudio() != null && movieRequest.getStudio().getId() != null) {
+            try {
+                movie.setStudio(studioRepository.findById(movieRequest.getStudio().getId())
+                        .orElseThrow(StudioNotFoundException::new));
+            } catch (StudioNotFoundException e) {
+                return ResponseEntity.badRequest().build();
+            }
+        }
+        if (movieRequest.getDirector() != null && movieRequest.getDirector().getId() != null) {
+            try {
+                movie.setDirector(directorRepository.findById(movieRequest.getDirector().getId())
+                        .orElseThrow(DirectorNotFoundException::new));
+            } catch (DirectorNotFoundException e) {
+                return ResponseEntity.badRequest().build();
+            }
+        }
+
+        return new ResponseEntity<>(movieService.add(movie), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/v1/movies/{id}")
     public ResponseEntity<Movie> modifyMovie(@PathVariable long id, @RequestBody MovieUpdateRequest movieUpdateRequest) throws MovieNotFoundException {
         try {
             Movie movie = new Movie();
@@ -125,9 +161,23 @@ public class MovieController {
         }
     }
 
-    @DeleteMapping("/movies/{id}")
+    @PutMapping("/v2/movies/{id}")
+    public ResponseEntity<Movie> modifyMovieV2(
+            @PathVariable long id,
+            @RequestBody MovieUpdateRequest movieUpdateRequest) throws MovieNotFoundException {
+        Movie updatedMovie = movieService.modifyPartial(id, movieUpdateRequest);
+        return ResponseEntity.ok(updatedMovie);
+    }
+
+    @DeleteMapping("/v1/movies/{id}")
     public ResponseEntity<Void> deleteMovie(@PathVariable long id) throws MovieNotFoundException {
         movieService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/v2/movies/{id}")
+    public ResponseEntity<Void> deleteMovieV2(@PathVariable long id) throws MovieNotFoundException {
+        movieService.softDelete(id);
         return ResponseEntity.noContent().build();
     }
 
