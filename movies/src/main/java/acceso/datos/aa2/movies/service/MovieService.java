@@ -1,11 +1,10 @@
 package acceso.datos.aa2.movies.service;
 
 import acceso.datos.aa2.movies.domain.Movie;
-import acceso.datos.aa2.movies.dto.DirectorOutDto;
-import acceso.datos.aa2.movies.dto.MovieOutDto;
-import acceso.datos.aa2.movies.dto.StudioOutDto;
+import acceso.datos.aa2.movies.dto.*;
 import acceso.datos.aa2.movies.exception.MovieNotFoundException;
 import acceso.datos.aa2.movies.repository.MovieRepository;
+import acceso.datos.aa2.movies.util.DateUtil;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -135,6 +134,31 @@ public class MovieService {
         return movieOutDto;
     }
 
+    public MovieOutDtoV2 findByIdV2(long id) throws MovieNotFoundException {
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(MovieNotFoundException::new);
+
+        MovieOutDtoV2 dto = modelMapper.map(movie, MovieOutDtoV2.class);
+
+        if (movie.getReleaseDate() != null) {
+            dto.setDaysUntilRelease(DateUtil.getDaysBetweenDates(LocalDate.now(), movie.getReleaseDate()));
+        }
+
+        if (movie.getDirector() != null) {
+            dto.setDirectorName(movie.getDirector().getName());
+        }
+
+        if (movie.getStudio() != null) {
+            dto.setStudio(modelMapper.map(movie.getStudio(), StudioOutDto.class));
+        }
+
+        if (movie.getDirector() != null) {
+            dto.setDirector(modelMapper.map(movie.getDirector(), DirectorOutDto.class));
+        }
+
+        return dto;
+    }
+
     public Movie modify(long id, Movie movie) throws MovieNotFoundException {
         Movie existingMovie = movieRepository.findById(id)
                 .orElseThrow(MovieNotFoundException::new);
@@ -160,5 +184,28 @@ public class MovieService {
         }
 
         return movieRepository.save(existingMovie);
+    }
+
+    public Movie modifyPartial(long id, MovieUpdateRequest request) throws MovieNotFoundException {
+        Movie existing = movieRepository.findById(id)
+                .orElseThrow(MovieNotFoundException::new);
+
+        // Solo actualiza si el campo viene en el request (no null)
+        if (request.getTitle() != null) existing.setTitle(request.getTitle());
+        if (request.getSynopsis() != null) existing.setSynopsis(request.getSynopsis());
+        if (request.getReleaseDate() != null) existing.setReleaseDate(request.getReleaseDate());
+        if (request.getDuration() != null) existing.setDuration(request.getDuration());
+        if (request.getGenre() != null) existing.setGenre(request.getGenre());
+        if (request.getImageUrl() != null) existing.setImageUrl(request.getImageUrl());
+        if (request.getAverageRating() != null) existing.setAverageRating(request.getAverageRating());
+
+        return movieRepository.save(existing);
+    }
+
+    public void softDelete(long id) throws MovieNotFoundException {
+        Movie movie = movieRepository.findById(id)
+                .orElseThrow(MovieNotFoundException::new);
+        movie.setActive(false);
+        movieRepository.save(movie);
     }
 }

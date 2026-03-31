@@ -35,6 +35,9 @@ public class Movie {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
+    @Column(columnDefinition = "boolean default true")
+    private Boolean active = true;
+
     @Column
     @Min(value = 1, message = "Duration must be at least 1 minute")
     @Max(value = 600, message = "Duration cannot exceed 600 minutes")
