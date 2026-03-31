@@ -1,0 +1,41 @@
+name: movies
+services:
+  movies-db:
+    image: mariadb:11.3.2
+    container_name: movies-db
+    restart: always
+    environment:
+      MYSQL_USER: $MARIADB_USER
+      MYSQL_PASSWORD: $MARIADB_PASSWORD
+      MYSQL_DATABASE: $MARIADB_DATABASE
+      MYSQL_ROOT_PASSWORD: $MARIADB_ROOT_PASSWORD
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: [ CMD, healthcheck.sh, --connect, --innodb_initialized ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+    networks:
+      - network-movies
+
+  movies-api:
+    image: movies-api
+    container_name: movies-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      movies-db:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:mariadb://movies-db:3306/$MARIADB_DATABASE
+      SPRING_DATASOURCE_USERNAME: $MARIADB_USER
+      SPRING_DATASOURCE_PASSWORD: $MARIADB_PASSWORD
+      SPRING_CLOUD_CONFIG_ENABLED: "false"
+    networks:
+      - network-movies
+
+networks:
+  network-movies:
+    driver: bridge

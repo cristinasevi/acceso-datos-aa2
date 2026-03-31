@@ -1,0 +1,53 @@
+name: Integration tests with Newman
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build project
+        working-directory: movies
+        run: mvn package -DskipTests
+
+      - name: Build Docker image
+        working-directory: movies
+        run: docker build -t movies-api .
+
+      - name: Start containers
+        working-directory: movies
+        run: docker compose up -d
+        env:
+          MARIADB_USER: cristina
+          MARIADB_PASSWORD: password
+          MARIADB_DATABASE: movies_aa2
+          MARIADB_ROOT_PASSWORD: rootpassword
+
+      - name: Wait for API to be ready
+        run: |
+          for i in {1..30}; do
+            if curl -s http://localhost:8080/api/v1/movies > /dev/null; then
+              echo "API is ready"
+              break
+            fi
+            echo "Attempt $i - waiting 5s..."
+            sleep 5
+          done
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run integration tests
+        working-directory: movies
+        run: newman run Movies_Movies.postman_collection.json -e local.postman_environment.json
