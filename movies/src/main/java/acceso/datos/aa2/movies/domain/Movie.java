@@ -35,7 +35,7 @@ public class Movie {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate releaseDate;
 
-    @Column(nullable = false)
+    @Column(nullable = false, columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean active = true;
 
     @Column
