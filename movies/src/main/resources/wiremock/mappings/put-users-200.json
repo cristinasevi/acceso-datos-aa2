@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/users/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "username": "csevi",
+      "name": "Cristina",
+      "surname": "Serrano Vicente",
+      "email": "csevi.updated@gmail.com",
+      "password": "newpassword123",
+      "registrationDate": "2025-11-27",
+      "premium": true,
+      "birthDate": "2006-06-02",
+      "active": true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/movies/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "title": "Catch Me If You Can",
+      "synopsis": "Updated synopsis: A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor.",
+      "releaseDate": "2003-01-24",
+      "duration": 141,
+      "genre": "Action",
+      "averageRating": 8.5,
+      "imageUrl": "https://example.com/catch-me-if-you-can-updated.jpg"
+    }
+  }
+}

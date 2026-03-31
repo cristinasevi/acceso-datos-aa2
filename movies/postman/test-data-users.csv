@@ -1,0 +1,6 @@
+username,name,surname,email,password,registrationDate,premium,birthDate,active
+csevi,Cristina,Serrano,csevi@example.com,password123,2025-11-27,true,2006-06-02,true
+mdiaz,Marta,Díaz,mdiaz@example.com,password456,2025-11-28,false,1995-03-15,true
+jlopez,Juan,López,jlopez@example.com,password789,2025-11-29,true,1988-07-22,true
+agarcia,Ana,García,agarcia@example.com,password321,2025-11-30,false,2000-12-10,true
+pmartin,Pedro,Martín,pmartin@example.com,password654,2025-12-01,true,1992-05-18,true

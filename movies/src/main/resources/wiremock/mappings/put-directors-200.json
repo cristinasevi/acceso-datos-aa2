@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/directors/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "name": "Christopher Nolan",
+      "nationality": "British",
+      "birthDate": "1970-07-30",
+      "active": true,
+      "awards": 30,
+      "biography": "Award-winning director known for complex narratives and blockbuster films"
+    }
+  }
+}

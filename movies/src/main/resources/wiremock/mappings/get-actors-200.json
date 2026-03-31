@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/actors"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "name": "Leonardo DiCaprio",
+        "nationality": "American",
+        "active": true,
+        "actorType": "Lead"
+      },
+      {
+        "id": 2,
+        "name": "Tom Hanks",
+        "nationality": "American",
+        "active": true,
+        "actorType": "Lead"
+      }
+    ]
+  }
+}

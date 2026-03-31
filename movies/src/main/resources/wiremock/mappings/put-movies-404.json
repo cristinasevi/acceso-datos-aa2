@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/movies/999"
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 404,
+      "title": "not-found",
+      "message": "The movie does not exist",
+      "errors": {}
+    }
+  }
+}

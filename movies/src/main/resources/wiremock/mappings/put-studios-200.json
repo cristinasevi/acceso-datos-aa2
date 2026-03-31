@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/studios/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "name": "Warner Bros Pictures",
+      "country": "USA",
+      "foundationYear": 1923,
+      "email": "info@warnerbros.com",
+      "phone": "+1234567890",
+      "active": true,
+      "latitude": 34.151618,
+      "longitude": -118.338312
+    }
+  }
+}

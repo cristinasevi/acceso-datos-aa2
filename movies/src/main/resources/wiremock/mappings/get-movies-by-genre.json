@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/movies",
+    "queryParameters": {
+      "genre": {
+        "equalTo": "Action"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "title": "Catch Me If You Can",
+        "synopsis": "A true story about Frank Abagnale Jr.",
+        "genre": "Action",
+        "averageRating": 8.1,
+        "imageUrl": "https://example.com/catch-me-if-you-can.jpg"
+      }
+    ]
+  }
+}

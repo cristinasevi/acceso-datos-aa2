@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/users/([0-9]+)/reviews"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "comment": "An absolutely mind-bending masterpiece!",
+        "rating": 10,
+        "reviewDate": "2025-11-27",
+        "recommended": true,
+        "spoiler": false,
+        "username": "csevi",
+        "movieTitle": "Catch Me If You Can"
+      },
+      {
+        "id": 4,
+        "comment": "Amazing cinematography",
+        "rating": 9,
+        "reviewDate": "2025-11-29",
+        "recommended": true,
+        "spoiler": false,
+        "username": "csevi",
+        "movieTitle": "Inception"
+      }
+    ]
+  }
+}

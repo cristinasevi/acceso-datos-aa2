@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/studios"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "name": "Warner Bros",
+        "country": "USA",
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Universal Pictures",
+        "country": "USA",
+        "active": true
+      }
+    ]
+  }
+}

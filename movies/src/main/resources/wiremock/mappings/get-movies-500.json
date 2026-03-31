@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/movies",
+    "queryParameters": {
+      "error": {
+        "equalTo": "500"
+      }
+    }
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 500,
+      "title": "internal-server-error",
+      "message": "An unexpected error occurred while processing the request",
+      "errors": {}
+    }
+  }
+}

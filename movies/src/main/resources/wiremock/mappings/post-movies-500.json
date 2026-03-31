@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/movies",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.title == 'ERROR')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 500,
+      "title": "internal-server-error",
+      "message": "An unexpected error occurred while creating the movie",
+      "errors": {}
+    }
+  }
+}

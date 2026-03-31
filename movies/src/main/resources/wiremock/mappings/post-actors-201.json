@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/actors",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "name": "Brad Pitt",
+      "nationality": "American",
+      "birthDate": "1963-12-18",
+      "active": true,
+      "awards": 2,
+      "biography": "Award-winning American actor and producer",
+      "actorType": "Lead"
+    }
+  }
+}

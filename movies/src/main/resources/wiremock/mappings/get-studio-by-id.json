@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/studios/([0-9]+)"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "name": "Warner Bros",
+      "country": "USA",
+      "foundationYear": 1923,
+      "email": "contact@warnerbros.com",
+      "phone": "+1234567890",
+      "active": true
+    }
+  }
+}

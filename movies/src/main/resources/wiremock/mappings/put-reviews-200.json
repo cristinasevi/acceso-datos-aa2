@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/reviews/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "comment": "After a second viewing, this movie is even better! A true masterpiece that deserves all the recognition.",
+      "rating": 10,
+      "reviewDate": "2025-11-27",
+      "recommended": true,
+      "spoiler": false,
+      "user": {
+        "id": 1
+      },
+      "movie": {
+        "id": 1
+      }
+    }
+  }
+}

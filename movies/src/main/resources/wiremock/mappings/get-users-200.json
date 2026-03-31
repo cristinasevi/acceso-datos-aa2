@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/users"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "username": "csevi",
+        "name": "Cristina",
+        "surname": "Serrano",
+        "email": "csevi@gmail.com",
+        "premium": true
+      },
+      {
+        "id": 2,
+        "username": "mdiaz",
+        "name": "Marta",
+        "surname": "Díaz",
+        "email": "mdiaz@gmail.com",
+        "premium": false
+      }
+    ]
+  }
+}

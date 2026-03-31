@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/movies/([0-9]+)"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "title": "Catch Me If You Can",
+      "synopsis": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
+      "releaseDate": "2003-01-24",
+      "duration": 141,
+      "genre": "Action",
+      "averageRating": 8.1,
+      "imageUrl": "https://example.com/catch-me-if-you-can.jpg",
+      "daysUntilRelease": -8.352,
+      "directorName": "Steven Spielberg",
+      "studioName": "Warner Bros"
+    }
+  }
+}

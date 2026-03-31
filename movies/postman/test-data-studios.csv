@@ -1,0 +1,6 @@
+name,country,foundationYear,email,phone,active,latitude,longitude
+Warner Bros,USA,1923,contact@warnerbros.com,+1-818-954-6000,true,34.151618,-118.338312
+Universal Pictures,USA,1912,info@universalpictures.com,+1-818-777-1000,true,34.138351,-118.355476
+20th Century Studios,USA,1935,contact@20thcentury.com,+1-310-369-1000,true,34.065850,-118.416439
+Paramount Pictures,USA,1912,info@paramount.com,+1-323-956-5000,true,34.083611,-118.321495
+Columbia Pictures,USA,1924,contact@sonypictures.com,+1-310-244-4000,true,34.016071,-118.398851

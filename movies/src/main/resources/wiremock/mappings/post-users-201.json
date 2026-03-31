@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/users",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "username": "jlopez",
+      "name": "Juan",
+      "surname": "López",
+      "email": "jlopez@gmail.com",
+      "password": "password123",
+      "registrationDate": "2025-11-30",
+      "premium": false,
+      "birthDate": "1995-03-15",
+      "active": true
+    }
+  }
+}

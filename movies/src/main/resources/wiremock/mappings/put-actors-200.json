@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/actors/([0-9]+)",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "name": "Leonardo DiCaprio",
+      "nationality": "American",
+      "birthDate": "1974-11-11",
+      "active": true,
+      "awards": 2,
+      "biography": "Oscar-winning actor known for transformative roles in films like Titanic, Inception, and The Revenant",
+      "actorType": "Lead"
+    }
+  }
+}

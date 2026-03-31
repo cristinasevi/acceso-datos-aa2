@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/movies",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "title": "New Movie",
+      "synopsis": "A newly created movie",
+      "releaseDate": "2025-12-01",
+      "duration": 120,
+      "genre": "Action",
+      "averageRating": 0.0,
+      "imageUrl": "https://example.com/newmovie.jpg"
+    }
+  }
+}

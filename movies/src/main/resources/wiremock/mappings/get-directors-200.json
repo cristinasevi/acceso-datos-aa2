@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/directors"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "name": "Christopher Nolan",
+        "nationality": "British",
+        "active": true
+      },
+      {
+        "id": 2,
+        "name": "Steven Spielberg",
+        "nationality": "American",
+        "active": true
+      }
+    ]
+  }
+}

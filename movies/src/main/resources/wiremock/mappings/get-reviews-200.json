@@ -1,0 +1,34 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/reviews"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "comment": "An absolutely mind-bending masterpiece!",
+        "rating": 10,
+        "reviewDate": "2025-11-27",
+        "recommended": true,
+        "spoiler": false,
+        "username": "csevi",
+        "movieTitle": "Catch Me If You Can"
+      },
+      {
+        "id": 2,
+        "comment": "Great film with amazing effects",
+        "rating": 9,
+        "reviewDate": "2025-11-28",
+        "recommended": true,
+        "spoiler": false,
+        "username": "mdiaz",
+        "movieTitle": "The Matrix"
+      }
+    ]
+  }
+}

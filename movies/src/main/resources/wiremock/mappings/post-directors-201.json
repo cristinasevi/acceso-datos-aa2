@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/directors",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "name": "Quentin Tarantino",
+      "nationality": "American",
+      "birthDate": "1963-03-27",
+      "active": true,
+      "awards": 15,
+      "biography": "American filmmaker known for nonlinear storylines"
+    }
+  }
+}

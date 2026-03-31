@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "/studios/999"
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 404,
+      "title": "not-found",
+      "message": "The studio does not exist",
+      "errors": {}
+    }
+  }
+}

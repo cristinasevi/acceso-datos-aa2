@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/reviews/([0-9]+)",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.comment == '')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 400,
+      "title": "bad-request",
+      "message": "Validation error",
+      "errors": {
+        "comment": "Comment cannot be empty"
+      }
+    }
+  }
+}

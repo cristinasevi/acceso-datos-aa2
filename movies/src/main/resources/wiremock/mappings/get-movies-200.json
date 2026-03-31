@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/movies"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": [
+      {
+        "id": 1,
+        "title": "Catch Me If You Can",
+        "synopsis": "A true story about Frank Abagnale Jr. who, before his 19th birthday, successfully conned millions of dollars worth of checks as a Pan Am pilot, doctor, and legal prosecutor. An FBI agent makes it his mission to put him behind bars. But Frank not only eludes capture, he revels in the pursuit.",
+        "genre": "Action",
+        "averageRating": 8.1,
+        "imageUrl": "https://example.com/catch-me-if-you-can.jpg"
+      },
+      {
+        "id": 2,
+        "title": "The Matrix",
+        "synopsis": "A hacker discovers the true nature of reality",
+        "genre": "Science Fiction",
+        "averageRating": 8.7,
+        "imageUrl": "https://example.com/matrix.jpg"
+      }
+    ]
+  }
+}

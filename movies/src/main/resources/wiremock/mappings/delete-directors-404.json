@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "DELETE",
+    "url": "/directors/999"
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 404,
+      "title": "not-found",
+      "message": "The director does not exist",
+      "errors": {}
+    }
+  }
+}

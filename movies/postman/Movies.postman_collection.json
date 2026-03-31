@@ -1,0 +1,1308 @@
+{
+	"info": {
+		"_postman_id": "d60878d9-bb48-4cf0-a400-46d74a50d98b",
+		"name": "Movies",
+		"description": "**Movies API**\n\nMovies API REST - Actividad AA1 Acceso a Datos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35157639",
+		"_collection_link": "https://www.postman.com/cristinasevi/workspace/gs-dam/collection/35157639-d60878d9-bb48-4cf0-a400-46d74a50d98b?action=share&source=collection_link&creator=35157639"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "/movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						},
+						"description": "Obtiene todas las películas"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "Obtiene una película por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies?genre={genre}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies?genre=Science Fiction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "genre",
+									"value": "Science Fiction"
+								}
+							]
+						},
+						"description": "Filtra las películas por género"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies?releaseDateFrom={releaseDateFrom}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies?releaseDateFrom=2000-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "releaseDateFrom",
+									"value": "2000-01-01"
+								}
+							]
+						},
+						"description": "Filtra las películas por género"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies?releaseDateTo={releaseDateTo}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies?releaseDateTo=2025-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "releaseDateTo",
+									"value": "2025-01-01"
+								}
+							]
+						},
+						"description": "Filtra las películas por género"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies?minRating={minRating}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies?minRating=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "minRating",
+									"value": "8"
+								}
+							]
+						},
+						"description": "Filtra las películas por género"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"{{title}}\",\r\n  \"synopsis\": \"{{synopsis}}\",\r\n  \"releaseDate\": \"{{releaseDate}}\",\r\n  \"duration\": {{duration}},\r\n  \"genre\": \"{{genre}}\",\r\n  \"averageRating\": {{averageRating}},\r\n  \"imageUrl\": \"{{imageUrl}}\",\r\n  \"studioId\": 1,\r\n  \"directorId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies"
+							]
+						},
+						"description": "Crea una película"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Updated Movie\",\r\n  \"synopsis\": \"...\",\r\n  \"releaseDate\": \"2025-01-01\",\r\n  \"duration\": 120,\r\n  \"genre\": \"Action\",\r\n  \"averageRating\": 8.5,\r\n  \"imageUrl\": \"https://...\",\r\n  \"studioId\": 1,\r\n  \"directorId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "Actualiza los campos de una película"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						},
+						"description": "Elimina una película"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actors",
+			"item": [
+				{
+					"name": "/actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						},
+						"description": "Obtiene todos los actores"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "Obtiene un actor por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors?nationality={nationality}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors?nationality=American",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							],
+							"query": [
+								{
+									"key": "nationality",
+									"value": "American"
+								}
+							]
+						},
+						"description": "Filta los actores por nacionalidad"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors?active={active}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors?active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Filta los actores por nacionalidad"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors?actorType={actorType}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors?actorType=Lead",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							],
+							"query": [
+								{
+									"key": "actorType",
+									"value": "Lead"
+								}
+							]
+						},
+						"description": "Filta los actores por nacionalidad"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"nationality\": \"{{nationality}}\",\r\n  \"birthDate\": \"{{birthDate}}\",\r\n  \"active\": {{active}},\r\n  \"awards\": {{awards}},\r\n  \"biography\": \"{{biography}}\",\r\n  \"actorType\": \"{{actorType}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors"
+							]
+						},
+						"description": "Crea un actor con sus campos"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Leonardo DiCaprio\",\r\n  \"nationality\": \"American\",\r\n  \"birthDate\": \"1974-11-11\",\r\n  \"active\": true,\r\n  \"awards\": 2,\r\n  \"biography\": \"Oscar-winning actor known for transformative roles\",\r\n  \"actorType\": \"Lead\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "Actualiza los campos de un actor"
+					},
+					"response": []
+				},
+				{
+					"name": "/actors/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actors",
+								"1"
+							]
+						},
+						"description": "Elimina un actor"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Obtiene todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Obtiene un usuario por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/users?premium={premium}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?premium=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "premium",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Obtiene un usuario por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/users?active={active}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Obtiene un usuario por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/users?registrationDateFrom={registrationDateFrom}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?registrationDateFrom=2025-11-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "registrationDateFrom",
+									"value": "2025-11-01"
+								}
+							]
+						},
+						"description": "Obtiene un usuario por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"name\": \"{{name}}\",\r\n  \"surname\": \"{{surname}}\",\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\",\r\n  \"registrationDate\": \"{{registrationDate}}\",\r\n  \"premium\": {{premium}},\r\n  \"birthDate\": \"{{birthDate}}\",\r\n  \"active\": {{active}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "Crea un usuario con sus campos"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"csevi\",\r\n  \"name\": \"Cristina\",\r\n  \"surname\": \"Serrano\",\r\n  \"email\": \"csevi@gmail.com\",\r\n  \"password\": \"password123\",\r\n  \"registrationDate\": \"2025-11-27\",\r\n  \"premium\": true,\r\n  \"birthDate\": \"2006-06-02\",\r\n  \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Actualiza los campos de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						},
+						"description": "Elimina un usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "/reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							]
+						},
+						"description": "Obtiene todas las reseñas"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Obtiene una reseña por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{id}/reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/1/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"reviews"
+							]
+						},
+						"description": "Obtiene las reseñas de una película"
+					},
+					"response": []
+				},
+				{
+					"name": "/users/{id}/reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"reviews"
+							]
+						},
+						"description": "Obtiene las reseñas de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews?minRating={minRating}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews?minRating=7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "minRating",
+									"value": "7"
+								}
+							]
+						},
+						"description": "Obtiene las reseñas de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews?recommended={recommended}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews?recommended=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "recommended",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Obtiene las reseñas de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews?spoiler={spoiler}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews?spoiler=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "spoiler",
+									"value": "false"
+								}
+							]
+						},
+						"description": "Obtiene las reseñas de un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "/movies/{id}/reviews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"{{comment}}\",\r\n  \"rating\": {{rating}},\r\n  \"reviewDate\": \"{{reviewDate}}\",\r\n  \"recommended\": {{recommended}},\r\n  \"spoiler\": {{spoiler}},\r\n  \"userId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/movies/1/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1",
+								"reviews"
+							]
+						},
+						"description": "Crea una reseña de una película"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"After a second viewing, this movie is even better! A true masterpiece.\",\r\n  \"rating\": 10,\r\n  \"reviewDate\": \"2025-11-27\",\r\n  \"recommended\": true,\r\n  \"spoiler\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Actualiza los campos de una reseña"
+					},
+					"response": []
+				},
+				{
+					"name": "/reviews/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/reviews/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"1"
+							]
+						},
+						"description": "Elimina una reseña"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Directors",
+			"item": [
+				{
+					"name": "/directors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors"
+							]
+						},
+						"description": "Obtiene todos los directores"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors",
+								"1"
+							]
+						},
+						"description": "Obtiene un director por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors?nationality={nationality}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors?nationality=British",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors"
+							],
+							"query": [
+								{
+									"key": "nationality",
+									"value": "British"
+								}
+							]
+						},
+						"description": "Filtra directores por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors?active={active}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors?active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Filtra directores por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors?minAwards={minAwards}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors?minAwards=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors"
+							],
+							"query": [
+								{
+									"key": "minAwards",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Filtra directores por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"nationality\": \"{{nationality}}\",\r\n  \"birthDate\": \"{{birthDate}}\",\r\n  \"active\": {{active}},\r\n  \"awards\": {{awards}},\r\n  \"biography\": \"{{biography}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/directors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors"
+							]
+						},
+						"description": "Crea director con sus campos"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Steven Spielberg\",\r\n  \"nationality\": \"American\",\r\n  \"birthDate\": \"1946-12-18\",\r\n  \"active\": true,\r\n  \"awards\": 24,\r\n  \"biography\": \"Award-winning director known for complex narratives\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors",
+								"1"
+							]
+						},
+						"description": "Actualiza campos de un director"
+					},
+					"response": []
+				},
+				{
+					"name": "/directors/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/directors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"directors",
+								"1"
+							]
+						},
+						"description": "Elimina un director"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Studios",
+			"item": [
+				{
+					"name": "/studios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios"
+							]
+						},
+						"description": "Obtiene todas las productoras"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios",
+								"1"
+							]
+						},
+						"description": "Obtiene una productora por ID"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios?country={country}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios?country=USA",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "USA"
+								}
+							]
+						},
+						"description": "Filtra productoras por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios?foundationYear={foundationYear}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios?foundationYear=1923",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios"
+							],
+							"query": [
+								{
+									"key": "foundationYear",
+									"value": "1923"
+								}
+							]
+						},
+						"description": "Filtra productoras por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios?active={active}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios?active=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios"
+							],
+							"query": [
+								{
+									"key": "active",
+									"value": "true"
+								}
+							]
+						},
+						"description": "Filtra productoras por país"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"{{name}}\",\r\n  \"country\": \"{{country}}\",\r\n  \"foundationYear\": {{foundationYear}},\r\n  \"email\": \"{{email}}\",\r\n  \"phone\": \"{{phone}}\",\r\n  \"active\": {{active}},\r\n  \"latitude\": {{latitude}},\r\n  \"longitude\": {{longitude}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/studios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios"
+							]
+						},
+						"description": "Crea prodcutora con sus campos"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Warner Bros Pictures\",\r\n  \"country\": \"USA\",\r\n  \"foundationYear\": 1923,\r\n  \"email\": \"info@warnerbros.com\",\r\n  \"phone\": \"+1234567890\",\r\n  \"active\": true,\r\n  \"latitude\": 34.151618,\r\n  \"longitude\": -118.338312\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/studios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios",
+								"1"
+							]
+						},
+						"description": "Actualiza campos de una productora"
+					},
+					"response": []
+				},
+				{
+					"name": "/studios/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/studios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"studios",
+								"1"
+							]
+						},
+						"description": "Elimina una productora"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

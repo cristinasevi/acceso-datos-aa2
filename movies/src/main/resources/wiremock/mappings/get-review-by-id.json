@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/reviews/([0-9]+)"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 1,
+      "comment": "An absolutely mind-bending masterpiece!",
+      "rating": 10,
+      "reviewDate": "2025-11-27",
+      "recommended": true,
+      "spoiler": false,
+      "userId": 1,
+      "username": "csevi",
+      "movieId": 1,
+      "movieTitle": "Catch Me If You Can"
+    }
+  }
+}

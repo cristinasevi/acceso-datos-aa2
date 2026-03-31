@@ -1,0 +1,31 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPattern": "/movies/([0-9]+)/reviews",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "id": 3,
+      "comment": "Absolutely loved this movie! The plot twists were incredible.",
+      "rating": 9,
+      "reviewDate": "2025-11-30",
+      "recommended": true,
+      "spoiler": false,
+      "user": {
+        "id": 1
+      },
+      "movie": {
+        "id": 1
+      }
+    }
+  }
+}

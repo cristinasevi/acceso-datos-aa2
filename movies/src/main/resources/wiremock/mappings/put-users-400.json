@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "PUT",
+    "urlPattern": "/users/([0-9]+)",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.name == '')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "code": 400,
+      "title": "bad-request",
+      "message": "Validation error",
+      "errors": {
+        "name": "Name cannot be empty"
+      }
+    }
+  }
+}
