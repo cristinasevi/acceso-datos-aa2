@@ -1,0 +1,564 @@
+{
+  "info": {
+    "name": "MoviesAPI - Apiman Gateway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "BASE_URL", "value": "http://gateway.local.gd:8090/movies/MoviesAPI/2.0" },
+    { "key": "API_KEY", "value": "6087e56d-f8bf-43b0-bafd-60a20049d3ec" }
+  ],
+  "item": [
+    {
+      "name": "Directors",
+      "item": [
+        {
+          "name": "Create Director",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/directors?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["directors"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Christopher Nolan\",\n  \"nationality\": \"British\",\n  \"birthDate\": \"1970-07-30\",\n  \"active\": true,\n  \"awards\": 24,\n  \"biography\": \"British film director\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Directors",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/directors?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["directors"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Director by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/directors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["directors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Director",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/directors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["directors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Christopher Nolan\",\n  \"nationality\": \"British-American\",\n  \"birthDate\": \"1970-07-30\",\n  \"active\": true,\n  \"awards\": 30,\n  \"biography\": \"Award-winning British-American director\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Director",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/directors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["directors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Studios",
+      "item": [
+        {
+          "name": "Create Studio",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/studios?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["studios"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Warner Bros\",\n  \"country\": \"USA\",\n  \"foundationYear\": 1923,\n  \"email\": \"contact@warnerbros.com\",\n  \"phone\": \"+1234567890\",\n  \"active\": true,\n  \"latitude\": 34.151618,\n  \"longitude\": -118.338312\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Studios",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/studios?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["studios"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Studio by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/studios/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["studios", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Studio",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/studios/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["studios", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Warner Bros Pictures\",\n  \"country\": \"USA\",\n  \"foundationYear\": 1923,\n  \"email\": \"info@warnerbros.com\",\n  \"phone\": \"+1234567890\",\n  \"active\": true,\n  \"latitude\": 34.151618,\n  \"longitude\": -118.338312\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Studio",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/studios/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["studios", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Actors",
+      "item": [
+        {
+          "name": "Create Actor",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/actors?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["actors"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Leonardo DiCaprio\",\n  \"nationality\": \"American\",\n  \"birthDate\": \"1974-11-11\",\n  \"active\": true,\n  \"awards\": 1,\n  \"biography\": \"Award-winning American actor\",\n  \"actorType\": \"Lead\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Actors",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/actors?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["actors"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Actor by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/actors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["actors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Actor",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/actors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["actors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Leonardo DiCaprio\",\n  \"nationality\": \"American\",\n  \"birthDate\": \"1974-11-11\",\n  \"active\": true,\n  \"awards\": 2,\n  \"biography\": \"Oscar-winning actor\",\n  \"actorType\": \"Lead\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Actor",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/actors/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["actors", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Movies v1",
+      "item": [
+        {
+          "name": "Create Movie v1",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Inception\",\n  \"synopsis\": \"A thief who steals corporate secrets through dream-sharing technology\",\n  \"releaseDate\": \"2010-07-16\",\n  \"duration\": 148,\n  \"genre\": \"ACTION\",\n  \"averageRating\": 8.8,\n  \"directorId\": 1,\n  \"studioId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Movies",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Movies by Genre",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies?genre=ACTION&apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies"],
+              "query": [
+                { "key": "genre", "value": "ACTION" },
+                { "key": "apikey", "value": "{{API_KEY}}" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Movie by ID v1",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Movie v1",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Inception Updated\",\n  \"synopsis\": \"A mind-bending thriller\",\n  \"releaseDate\": \"2010-07-16\",\n  \"duration\": 148,\n  \"genre\": \"THRILLER\",\n  \"averageRating\": 9.0,\n  \"directorId\": 1,\n  \"studioId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Movie v1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Movies v2",
+      "item": [
+        {
+          "name": "Create Movie v2",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v2/movies?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v2", "movies"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Dark Knight\",\n  \"synopsis\": \"Batman faces the Joker in Gotham\",\n  \"releaseDate\": \"2008-07-18\",\n  \"duration\": 152,\n  \"genre\": \"ACTION\",\n  \"averageRating\": 9.0,\n  \"rate\": 9,\n  \"director\": { \"id\": 1 },\n  \"studio\": { \"id\": 1 }\n}"
+            }
+          }
+        },
+        {
+          "name": "Get Movie by ID v2",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v2/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v2", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Movie v2 (partial)",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v2/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v2", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"The Dark Knight Rises\",\n  \"averageRating\": 9.5\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Movie v2 (soft delete)",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/api/v2/movies/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v2", "movies", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/users?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"csevi\",\n  \"name\": \"Cristina\",\n  \"surname\": \"Serrano\",\n  \"email\": \"csevi@example.com\",\n  \"password\": \"password123\",\n  \"registrationDate\": \"2026-03-31\",\n  \"premium\": true,\n  \"birthDate\": \"2000-06-02\",\n  \"active\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/users?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/users/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/users/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"csevi\",\n  \"name\": \"Cristina\",\n  \"surname\": \"Serrano Vicente\",\n  \"email\": \"csevi@example.com\",\n  \"password\": \"password123\",\n  \"registrationDate\": \"2026-03-31\",\n  \"premium\": true,\n  \"birthDate\": \"2000-06-02\",\n  \"active\": true\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/users/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "item": [
+        {
+          "name": "Create Review (via movie)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/movies/1/reviews?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["movies", "1", "reviews"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment\": \"An absolutely mind-bending masterpiece!\",\n  \"rating\": 10,\n  \"reviewDate\": \"2026-03-31\",\n  \"recommended\": true,\n  \"spoiler\": false,\n  \"userId\": 1\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Reviews",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/reviews?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Reviews by Movie",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/movies/1/reviews?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["movies", "1", "reviews"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Reviews by User",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/users/1/reviews?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "1", "reviews"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Review by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        },
+        {
+          "name": "Update Review",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"comment\": \"After a second viewing, even better! A true masterpiece.\",\n  \"rating\": 10,\n  \"reviewDate\": \"2026-03-31\",\n  \"recommended\": true,\n  \"spoiler\": false\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Review",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/1?apikey={{API_KEY}}",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "1"],
+              "query": [{ "key": "apikey", "value": "{{API_KEY}}" }]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
